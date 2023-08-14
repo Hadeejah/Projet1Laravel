@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Inscription</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(130deg, green, orange);
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        padding: 25px 30px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .container .title {
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .container form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px 0 12px 0;
+    }
+
+    form .form-group {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+    }
+
+    form span {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        height: 40px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        font-size: 15px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group input:valid {
+        border-color: orange;
+    }
+
+    form .button {
+        height: 40px;
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    form .button input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        cursor: pointer;
+        background: linear-gradient(130deg, green, orange);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+    }
+
+    form .button input:hover {
+        background: linear-gradient(130deg, green, orange);
+    }
+
+    @media(max-width: 584px) {
+        .container {
+            max-width: 100%;
+        }
+
+        form .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+
+        }
+
+        .container form {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .container form::-webkit-scrollbar {
+            width: 0;
+        }
+
+        form .button {
+            margin: 20px 0;
+        }
+
+        .form-group select {
+            width: 100%;
+        }
+
+        .masc-fem {
+            display: flex;
+          
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">Inscrire Élève</div>
+        <form action="#">
+            <div class="form-group">
+                <span>Nom</span>
+                <input type="text" placeholder="Entrer nom" required id="nom">
+            </div>
+            <div class="form-group">
+                <span>Prenom</span>
+                <input type="text" placeholder="Entrer prenom" required id="prenom">
+            </div>
+          <div class="form-group">
+                <span>Profil</span>
+                <input type="number" id="profil"> 
+            </div>
+            <div class="form-group">
+                <span>Date de Naissance</span>
+                <input type="date" placeholder="Entrer date de naissance" required id="dateNaissance">
+            </div>
+            <div class="form-group">
+                <span>Lieu de Naissance</span>
+                <input type="texte" placeholder="Entrer lieu de naissance" required id="lieuNaissance">
+            </div>
+            <div class="sel1">
+                <span>Niveau</span>
+                <select class="form-select form-select-lg mb-3 select-niveau" aria-label=".form-select-lg example" id="niveau">
+                    <option selected>Faites un choix</option>
+                </select>
+            </div>
+            <div class="sel1">
+                <span>Classe</span>
+                <select class="form-select form-select-lg mb-3 select-classe" aria-label=".form-select-lg example" id="classe">
+                    <option selected>Faites un choix</option>
+                </select>
+            </div>
+            <span>Sexe</span>
+            <div class="masc-fem">
+               <select name="sexe" id="sexe">
+                <option value="masculin">Masculin</option>
+                <option value="feminin">Feminin</option>
+               </select>
+            </div>
+
+            <div class="button">
+              <input type="button" value="Inscrire" id="btn">
+            </div>
+        </form>
+    </div>
+    <script src="inscrip.js"></script>
+</body>
+
+</html>
